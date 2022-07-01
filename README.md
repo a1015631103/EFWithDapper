@@ -1,7 +1,7 @@
 # EFWithDapper
 
 #### 介绍
-.NET6.0+EF Core 6.0+Dapper的一个Demo示例
+.NET6.0+EF Core 6.0+Dapper的一个Demo示例，包括增删改和批量使用EFcore，查询主要采用Dapper。
 
 #### 软件架构
 软件架构说明
@@ -28,6 +28,7 @@
 7. EFWithDapper.Services：业务实现层，集中处理webapi层传递过来的Model实体，最核心的业务代码写在这个层。
 
 整个项目用Autofac代替了.NET默认的IOC。
+常见的动态where条件拼接用到LinqKit库，Dapper则是DapperQueryBuilder库，还有Z.EntityFramework.Plus.EFCore用于批量更新和删除，都是开源不收费的。
 
 #### 参与贡献
 
