@@ -1,0 +1,14 @@
+E:\测试\EFWithDapper\EFWithDapper.DB\bin\Debug\net6.0\EFWithDapper.DB.deps.json
+E:\测试\EFWithDapper\EFWithDapper.DB\bin\Debug\net6.0\EFWithDapper.DB.dll
+E:\测试\EFWithDapper\EFWithDapper.DB\bin\Debug\net6.0\EFWithDapper.DB.pdb
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\EFWithDapper.DB.csproj.AssemblyReference.cache
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\EFWithDapper.DB.GeneratedMSBuildEditorConfig.editorconfig
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\EFWithDapper.DB.AssemblyInfoInputs.cache
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\EFWithDapper.DB.AssemblyInfo.cs
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\EFWithDapper.DB.csproj.CoreCompileInputs.cache
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\EFWithDapper.DB.dll
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\refint\EFWithDapper.DB.dll
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\EFWithDapper.DB.pdb
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\ref\EFWithDapper.DB.dll
+E:\测试\EFWithDapper\EFWithDapper.DB\bin\Debug\net6.0\EFWithDapper.DB.runtimeconfig.json
+E:\测试\EFWithDapper\EFWithDapper.DB\obj\Debug\net6.0\EFWithDapper.DB.genruntimeconfig.cache

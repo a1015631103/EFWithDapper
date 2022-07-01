@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\EFWithDapper.Core\EFWithDapper.Core.csproj" />
+		<ProjectReference Include="..\EFWithDapper.IServices\EFWithDapper.IServices.csproj" />
+		<ProjectReference Include="..\EFWithDapper.Model\EFWithDapper.Model.csproj" />
+		<ProjectReference Include="..\EFWithDapper.ObjectMapper\EFWithDapper.ObjectMapper.csproj" />
+		<ProjectReference Include="..\EFWithDapper.Services\EFWithDapper.Services.csproj" />
+	</ItemGroup>
+
+</Project>

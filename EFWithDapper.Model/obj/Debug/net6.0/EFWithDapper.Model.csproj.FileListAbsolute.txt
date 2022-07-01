@@ -1,0 +1,12 @@
+E:\测试\EFWithDapper\EFWithDapper.Model\bin\Debug\net6.0\EFWithDapper.Model.deps.json
+E:\测试\EFWithDapper\EFWithDapper.Model\bin\Debug\net6.0\EFWithDapper.Model.dll
+E:\测试\EFWithDapper\EFWithDapper.Model\bin\Debug\net6.0\EFWithDapper.Model.pdb
+E:\测试\EFWithDapper\EFWithDapper.Model\obj\Debug\net6.0\EFWithDapper.Model.csproj.AssemblyReference.cache
+E:\测试\EFWithDapper\EFWithDapper.Model\obj\Debug\net6.0\EFWithDapper.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\测试\EFWithDapper\EFWithDapper.Model\obj\Debug\net6.0\EFWithDapper.Model.AssemblyInfoInputs.cache
+E:\测试\EFWithDapper\EFWithDapper.Model\obj\Debug\net6.0\EFWithDapper.Model.AssemblyInfo.cs
+E:\测试\EFWithDapper\EFWithDapper.Model\obj\Debug\net6.0\EFWithDapper.Model.csproj.CoreCompileInputs.cache
+E:\测试\EFWithDapper\EFWithDapper.Model\obj\Debug\net6.0\EFWithDapper.Model.dll
+E:\测试\EFWithDapper\EFWithDapper.Model\obj\Debug\net6.0\refint\EFWithDapper.Model.dll
+E:\测试\EFWithDapper\EFWithDapper.Model\obj\Debug\net6.0\EFWithDapper.Model.pdb
+E:\测试\EFWithDapper\EFWithDapper.Model\obj\Debug\net6.0\ref\EFWithDapper.Model.dll

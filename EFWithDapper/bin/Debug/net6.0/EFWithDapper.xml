@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EFWithDapper</name>
+    </assembly>
+    <members>
+        <member name="T:EFWithDapper.Controllers.Demo01Controller">
+            <summary>
+            Add,Update,Delete等单个和批量方法
+            </summary>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo01Controller.AddRole">
+            <summary>
+            添加角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo01Controller.AddRoleBulk">
+            <summary>
+            批量添加角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo01Controller.UpdateRole">
+            <summary>
+            更新角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo01Controller.UpdateRoleBulk">
+            <summary>
+            批量更新部分id的比如等级和是否启用禁用属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo01Controller.DeleteRole">
+            <summary>
+            删除角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:EFWithDapper.Controllers.Demo02Controller">
+            <summary>
+            单表和两表的分页查询
+            </summary>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo02Controller.#ctor(EFWithDapper.IServices.IDemo02Services)">
+            <summary>
+            单表和两表的分页查询
+            </summary>
+            <param name="iDemo02Services"></param>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo02Controller.QuerySysUserInfoListByPage">
+            <summary>
+            分页查询用户列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo02Controller.QueryUserInfoListByPage">
+            <summary>
+            分页查询用户列表（包括扩展信息）（Dapper）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo02Controller.SqlInjectionTest">
+            <summary>
+            Sql注入测试
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo02Controller.GetRoleByUserCountList">
+            <summary>
+            获取角色所属用户总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:EFWithDapper.Controllers.Demo03Controller">
+            <summary>
+            事务方面
+            </summary>
+        </member>
+        <member name="M:EFWithDapper.Controllers.Demo03Controller.RegisterSysUserInfo">
+            <summary>
+            /*注册一个系统用户
+            使用事务：（1）添加SysUser表
+            （2）根据（1）的SysUser的Guid添加tb_UsersExpand（用户扩展信息表）
+            （3）添加到用户角色中间表sys_RoleInUser
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

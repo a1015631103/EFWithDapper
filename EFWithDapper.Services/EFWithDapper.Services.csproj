@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EFWithDapper.Core\EFWithDapper.Core.csproj" />
+    <ProjectReference Include="..\EFWithDapper.DB\EFWithDapper.DB.csproj" />
+    <ProjectReference Include="..\EFWithDapper.IServices\EFWithDapper.IServices.csproj" />
+    <ProjectReference Include="..\EFWithDapper.Model\EFWithDapper.Model.csproj" />
+    <ProjectReference Include="..\EFWithDapper.ObjectMapper\EFWithDapper.ObjectMapper.csproj" />
+  </ItemGroup>
+
+</Project>
