@@ -27,7 +27,7 @@
 6. EFWithDapper.IServices：业务接口层，定义一些用到的业务接口。
 7. EFWithDapper.Services：业务实现层，集中处理webapi层传递过来的Model实体，最核心的业务代码写在这个层。
 
-整个项目用Autofac代替了.NET默认的IOC。
+引入Autofac来注入整个dll项目，微软自带的框架也支持只是需要一个一个类的注入较麻烦
 常见的动态where条件拼接用到LinqKit库，Dapper则是DapperQueryBuilder库，还有Z.EntityFramework.Plus.EFCore用于批量更新和删除，都是开源不收费的。
 
 #### 参与贡献
