@@ -31,7 +31,7 @@ namespace EFWithDapper.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("QuerySysUserInfoListByPage")]
-        public ResultData<List<SysUserInfo>> QuerySysUserInfoListByPage()
+        public async Task<ResultData<List<SysUserInfo>>> QuerySysUserInfoListByPage()
         {
             SysUserInfoParam param = new SysUserInfoParam()
             {
@@ -44,7 +44,7 @@ namespace EFWithDapper.Controllers
                 RegEmail = "",
                 RegPhone = ""
             };
-            return iDemo02Services.QuerySysUserInfoListByPage(param);
+            return await iDemo02Services.QuerySysUserInfoListByPageAsync(param);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace EFWithDapper.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("QueryUserInfoListByPage")]
-        public ResultData<List<UserInfo>> QueryUserInfoListByPage()
+        public async Task<ResultData<List<UserInfo>>> QueryUserInfoListByPage()
         {
             UserInfoParam param = new UserInfoParam()
             {
@@ -64,7 +64,7 @@ namespace EFWithDapper.Controllers
                 LoginName = "",
                 Sex = 1
             };
-            return iDemo02Services.QueryUserInfoListByPage(param);
+            return await iDemo02Services.QueryUserInfoListByPageAsync(param);
         }
 
         /// <summary>
@@ -72,11 +72,11 @@ namespace EFWithDapper.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("SqlInjectionTest")]
-        public ResultData<int> SqlInjectionTest()
+        public async Task<ResultData<int>> SqlInjectionTest()
         {
             string loginName = "' or '1'='1";
             string pwd = "";
-            return iDemo02Services.SqlInjectionTest(loginName, pwd);
+            return await iDemo02Services.SqlInjectionTestAsync(loginName, pwd);
         }
 
         /// <summary>
@@ -84,9 +84,9 @@ namespace EFWithDapper.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("GetRoleByUserCountList")]
-        public ResultData<List<RoleByUserCount>> GetRoleByUserCountList()
+        public async Task<ResultData<List<RoleByUserCount>>> GetRoleByUserCountList()
         {
-            return iDemo02Services.GetRoleByUserCountList();
+            return await iDemo02Services.GetRoleByUserCountListAsync();
         }
     }
 }

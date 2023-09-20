@@ -34,7 +34,7 @@ namespace EFWithDapper.Services
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public ResultData<List<SysUserInfo>> QuerySysUserInfoListByPage(SysUserInfoParam param)
+        public async Task<ResultData<List<SysUserInfo>>> QuerySysUserInfoListByPageAsync(SysUserInfoParam param)
         {
             ResultData<List<SysUserInfo>> result = new ResultData<List<SysUserInfo>>();
             var whereExp = PredicateBuilder.New<SysUser>(true);
@@ -64,10 +64,10 @@ namespace EFWithDapper.Services
                 whereExp = whereExp.And(t => t.RegPhone.Equals(param.RegPhone));
             }
 
-            int total = dbContext.SysUsers.AsNoTracking().Where(whereExp).Count();
-            var list = dbContext.SysUsers.AsNoTracking().OrderByDescending(t => t.CreateTime).Where(whereExp)
+            int total = await dbContext.SysUsers.AsNoTracking().Where(whereExp).CountAsync();
+            var list = await dbContext.SysUsers.AsNoTracking().OrderByDescending(t => t.CreateTime).Where(whereExp)
                 .Skip((param.PageIndex - 1) * param.PageSize).Take(param.PageSize).ProjectTo<SysUserInfo>(mapper.ConfigurationProvider)
-                .ToList();
+                .ToListAsync();
             if (list.Count > 0)
             {
                 result.Tag = 1;
@@ -84,7 +84,7 @@ namespace EFWithDapper.Services
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public ResultData<List<UserInfo>> QueryUserInfoListByPage(UserInfoParam param)
+        public async Task<ResultData<List<UserInfo>>> QueryUserInfoListByPageAsync(UserInfoParam param)
         {
             ResultData<List<UserInfo>> result = new ResultData<List<UserInfo>>();
 
@@ -126,9 +126,9 @@ FETCH NEXT {param.PageSize} ROWS ONLY");
             {
                 query.Where(orFilters);
             }
-            var queryResult = query.QueryMultiple();
-            int total = queryResult.Read<int>().Single();
-            List<UserInfo> list = queryResult.Read<UserInfo>().ToList();
+            var queryResult = await query.QueryMultipleAsync();
+            int total = await queryResult.ReadFirstAsync<int>();
+            List<UserInfo> list = (await queryResult.ReadAsync<UserInfo>()).ToList(); ;
 
             if (list.Count > 0)
             {
@@ -146,14 +146,14 @@ FETCH NEXT {param.PageSize} ROWS ONLY");
         /// <param name="loginName"></param>
         /// <param name="pwd"></param>
         /// <returns></returns>
-        public ResultData<int> SqlInjectionTest(string loginName, string pwd)
+        public async Task<ResultData<int>> SqlInjectionTestAsync(string loginName, string pwd)
         {
             ResultData<int> result = new ResultData<int>();
 
             var dbConnection = dbContext.Database.GetDbConnection();
             var query = dbConnection.QueryBuilder($@"SELECT COUNT(*)  FROM sys_User WHERE LoginName={loginName} AND Password={pwd}");
 
-            var count = query.QueryFirst<int>();
+            var count = await query.QueryFirstAsync<int>();
             if (count > 0)
             {
                 result.Tag = 1;
@@ -166,7 +166,7 @@ FETCH NEXT {param.PageSize} ROWS ONLY");
         ///  获取角色所属用户总数
         /// </summary>
         /// <returns></returns>
-        public ResultData<List<RoleByUserCount>> GetRoleByUserCountList()
+        public async Task<ResultData<List<RoleByUserCount>>> GetRoleByUserCountListAsync()
         {
             ResultData<List<RoleByUserCount>> result = new ResultData<List<RoleByUserCount>>();
             var dbConnection = dbContext.Database.GetDbConnection();
@@ -176,7 +176,7 @@ GROUP BY RoleId
 HAVING RoleId > 3 AND COUNT(*)>1 ) AS ru
 INNER JOIN sys_Role AS r ON ru.RoleId = r.Id");
 
-            var list = query.Query<RoleByUserCount>().ToList();
+            var list = (await query.QueryAsync<RoleByUserCount>()).ToList();
             if (list.Count > 0)
             {
                 result.Tag = 1;

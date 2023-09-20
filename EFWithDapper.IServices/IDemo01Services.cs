@@ -10,15 +10,15 @@ namespace EFWithDapper.IServices
 {
     public interface IDemo01Services
     {
-        ResultData AddRole(AddRoleModel roleModel);
+        Task<ResultData> AddRoleAsync(AddRoleModel roleModel);
 
-        ResultData AddRoleBulk(List<AddRoleModel> rolelist);
+        Task<ResultData> AddRoleBulkAsync(List<AddRoleModel> rolelist);
 
-        RoleInfo? GetRoleInfo(int id);
+        Task<RoleInfo?> GetRoleInfoAsync(int id);
 
-        ResultData UpdateRole(RoleInfo roleinfo);
-        ResultData UpdateRoleBulk(UpdateRoleEnable roleEnable);
+        Task<ResultData> UpdateRoleAsync(RoleInfo roleinfo);
+        Task<ResultData> UpdateRoleBulkAsync(UpdateRoleEnable roleEnable);
 
-        ResultData DeleteRole(List<int> roleIdList);
+        Task<ResultData> DeleteRoleAsync(List<int> roleIdList);
     }
 }

@@ -29,13 +29,13 @@ namespace EFWithDapper.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost("AddRole")]
-        public ResultData AddRole()
+        public async Task<ResultData> AddRole()
         {
             AddRoleModel roleModel = new AddRoleModel();
             roleModel.RoleName = "测试";
             roleModel.RoleLevel = 1;
             roleModel.Description = "描述测试";
-            return iDemo01Services.AddRole(roleModel);
+            return await iDemo01Services.AddRoleAsync(roleModel);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace EFWithDapper.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost("AddRoleBulk")]
-        public ResultData AddRoleBulk()
+        public async Task<ResultData> AddRoleBulk()
         {
             List<AddRoleModel> roleList = new List<AddRoleModel>();
             for (int i = 0; i < 50; i++)
@@ -55,7 +55,7 @@ namespace EFWithDapper.Controllers
                     Description = "测试描述" + i.ToString()
                 });
             }
-            return iDemo01Services.AddRoleBulk(roleList);
+            return await iDemo01Services.AddRoleBulkAsync(roleList);
         }
 
         /// <summary>
@@ -63,15 +63,15 @@ namespace EFWithDapper.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost("UpdateRole")]
-        public ResultData UpdateRole()
+        public async Task<ResultData> UpdateRole()
         {
             ResultData result = new ResultData();
-            RoleInfo? roleInfo = iDemo01Services.GetRoleInfo(14);
+            RoleInfo? roleInfo = await iDemo01Services.GetRoleInfoAsync(21);
             if (roleInfo != null)
             {
                 roleInfo.RoleName = "高级教师";
                 roleInfo.RoleLevel = 3;
-                result = iDemo01Services.UpdateRole(roleInfo);
+                result = await iDemo01Services.UpdateRoleAsync(roleInfo);
             }
             return result;
         }
@@ -81,12 +81,12 @@ namespace EFWithDapper.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost("UpdateRoleBulk")]
-        public ResultData UpdateRoleBulk()
+        public async Task<ResultData> UpdateRoleBulk()
         {
             UpdateRoleEnable roleEnable = new UpdateRoleEnable();
             roleEnable.Enable = 2;
-            roleEnable.RoleIdList = new List<int>() { 1, 2, 3 };
-            return iDemo01Services.UpdateRoleBulk(roleEnable);
+            roleEnable.RoleIdList = new List<int>() { 14,15,16 };
+            return await iDemo01Services.UpdateRoleBulkAsync(roleEnable);
         }
 
         /// <summary>
@@ -94,10 +94,10 @@ namespace EFWithDapper.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost("DeleteRole")]
-        public ResultData DeleteRole()
+        public async Task<ResultData> DeleteRole()
         {
-            List<int> roleIdList = new List<int>() {9,10,11,12,13 };
-            return iDemo01Services.DeleteRole(roleIdList);
+            List<int> roleIdList = new List<int>() {1,2,3,4,5,6 };
+            return await iDemo01Services.DeleteRoleAsync(roleIdList);
         }
 
 

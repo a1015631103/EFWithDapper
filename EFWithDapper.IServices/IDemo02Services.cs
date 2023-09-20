@@ -11,12 +11,12 @@ namespace EFWithDapper.IServices
 {
     public interface IDemo02Services
     {
-        ResultData<List<SysUserInfo>> QuerySysUserInfoListByPage(SysUserInfoParam param);
+        Task<ResultData<List<SysUserInfo>>> QuerySysUserInfoListByPageAsync(SysUserInfoParam param);
 
-        ResultData<List<UserInfo>> QueryUserInfoListByPage(UserInfoParam param);
+        Task<ResultData<List<UserInfo>>> QueryUserInfoListByPageAsync(UserInfoParam param);
 
-        ResultData<int> SqlInjectionTest(string loginName, string pwd);
+        Task<ResultData<int>> SqlInjectionTestAsync(string loginName, string pwd);
 
-        ResultData<List<RoleByUserCount>> GetRoleByUserCountList();
+        Task<ResultData<List<RoleByUserCount>>> GetRoleByUserCountListAsync();
     }
 }

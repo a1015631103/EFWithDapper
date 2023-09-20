@@ -24,10 +24,10 @@ namespace EFWithDapper.Services
             this.mapper = mapper;
         }
 
-        public ResultData AddRole(AddRoleModel roleModel)
+        public async Task<ResultData> AddRoleAsync(AddRoleModel roleModel)
         {
             ResultData result = new ResultData();
-            dbContext.SysRoles.Add(mapper.Map<SysRole>(roleModel));
+            await dbContext.SysRoles.AddAsync(mapper.Map<SysRole>(roleModel));
             result.Tag = dbContext.SaveChanges();
             if (result.Tag == 1)
             {
@@ -36,11 +36,11 @@ namespace EFWithDapper.Services
             return result;
         }
 
-        public ResultData AddRoleBulk(List<AddRoleModel> rolelist)
+        public async Task<ResultData> AddRoleBulkAsync(List<AddRoleModel> rolelist)
         {
             ResultData result = new ResultData();
-            dbContext.SysRoles.AddRange(mapper.Map<List<SysRole>>(rolelist));
-            int value = dbContext.SaveChanges();
+            await dbContext.SysRoles.AddRangeAsync(mapper.Map<List<SysRole>>(rolelist));
+            int value = await dbContext.SaveChangesAsync();
             if (value > 0)
             {
                 result.Tag = 1;
@@ -49,15 +49,15 @@ namespace EFWithDapper.Services
             return result;
         }
 
-        public RoleInfo? GetRoleInfo(int id)
+        public async Task<RoleInfo?> GetRoleInfoAsync(int id)
         {
-            return dbContext.SysRoles.AsNoTracking().Where(t => t.Id == id).ProjectTo<RoleInfo>(mapper.ConfigurationProvider).FirstOrDefault();
+            return await dbContext.SysRoles.AsNoTracking().Where(t => t.Id == id).ProjectTo<RoleInfo>(mapper.ConfigurationProvider).FirstOrDefaultAsync();
         }
 
-        public ResultData DeleteRole(List<int> roleIdList)
+        public async Task<ResultData> DeleteRoleAsync(List<int> roleIdList)
         {
             ResultData result = new ResultData();
-            int value = dbContext.SysRoles.Where(t => roleIdList.Contains(t.Id)).Delete();
+            int value = await dbContext.SysRoles.Where(t => roleIdList.Contains(t.Id)).DeleteAsync();
             if (value > 0)
             {
                 result.Tag = 1;
@@ -66,33 +66,33 @@ namespace EFWithDapper.Services
             return result;
         }
 
-        public ResultData UpdateRole(RoleInfo roleinfo)
+        public async Task<ResultData> UpdateRoleAsync(RoleInfo roleinfo)
         {
             ResultData result = new ResultData();
-            SysRole? roleEntity = dbContext.SysRoles.FirstOrDefault(t => t.Id == roleinfo.RoleId);
+            SysRole? roleEntity = await dbContext.SysRoles.FirstOrDefaultAsync(t => t.Id == roleinfo.RoleId);
             if (roleEntity == null)
             {
                 return result;
             }
             mapper.Map(roleinfo, roleEntity);
-            result.Tag = dbContext.SaveChanges();
+            result.Tag = await dbContext.SaveChangesAsync();
             if (result.Tag == 1)
             {
                 result.Message = "更新成功";
             }
-            return result;          
+            return result;
         }
 
-        public ResultData UpdateRoleBulk(UpdateRoleEnable roleEnable)
+        public async Task<ResultData> UpdateRoleBulkAsync(UpdateRoleEnable roleEnable)
         {
             ResultData result = new ResultData();
-            int value = dbContext.SysRoles.Where(t => roleEnable.RoleIdList.Contains(t.Id)).Update(t => new SysRole() { Enabled = roleEnable.Enable });
+            int value = await dbContext.SysRoles.Where(t => roleEnable.RoleIdList.Contains(t.Id)).UpdateAsync(t => new SysRole() { Enabled = roleEnable.Enable });
             if (value > 0)
             {
                 result.Tag = 1;
                 result.Message = "更新成功";
             }
             return result;
-        }     
+        }
     }
 }
