@@ -15,7 +15,7 @@ namespace EFWithDapper.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class Demo02Controller : ControllerBase
-    {
+    { 
         private IDemo02Services iDemo02Services;
         /// <summary>
         /// 单表和两表的分页查询
