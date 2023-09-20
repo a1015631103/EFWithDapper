@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\xieyaohuan\\.nuget\\packages\\": {}
+    "C:\\Users\\yubanmeiqin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\测试\\EFWithDapper\\EFWithDapper.Model\\EFWithDapper.Model.csproj",
+      "projectUniqueName": "E:\\MyGitCode\\EFWithDapper\\EFWithDapper.Model\\EFWithDapper.Model.csproj",
       "projectName": "EFWithDapper.Model",
-      "projectPath": "E:\\测试\\EFWithDapper\\EFWithDapper.Model\\EFWithDapper.Model.csproj",
-      "packagesPath": "C:\\Users\\xieyaohuan\\.nuget\\packages\\",
-      "outputPath": "E:\\测试\\EFWithDapper\\EFWithDapper.Model\\obj\\",
+      "projectPath": "E:\\MyGitCode\\EFWithDapper\\EFWithDapper.Model\\EFWithDapper.Model.csproj",
+      "packagesPath": "C:\\Users\\yubanmeiqin\\.nuget\\packages\\",
+      "outputPath": "E:\\MyGitCode\\EFWithDapper\\EFWithDapper.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\xieyaohuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yubanmeiqin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

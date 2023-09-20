@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RSOOAVGAGFv1rNYiv8QuNHnEpAT38T7SpaCaL4kB6Q8DSELCQg3mTafKUizVNHus9DEwPjZIUnmPRfXSA0+sKA==",
+  "dgSpecHash": "huhhSZ9YmNtCibPdV+n40XHJEklFb1dcT2yYEJRC9OB1eV7ysSCG9B3ca8QSGu7ZXcQlms91K705WAVJ/4/cbQ==",
   "success": true,
-  "projectFilePath": "E:\\测试\\EFWithDapper\\EFWithDapper.Model\\EFWithDapper.Model.csproj",
+  "projectFilePath": "E:\\MyGitCode\\EFWithDapper\\EFWithDapper.Model\\EFWithDapper.Model.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

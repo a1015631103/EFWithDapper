@@ -14,7 +14,7 @@ namespace EFWithDapper
             //containerBuilder.RegisterType<BaseRepository>().As<IBaseRepository>().SingleInstance();
 
             #region 使用 LoadFile 加载程序集
-
+             
             //获取项目路径
             var basePath = AppContext.BaseDirectory;
             var ServicesDllFile = Path.Combine(basePath, "EFWithDapper.Services.dll");//获取注入项目绝对路径
