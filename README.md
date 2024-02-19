@@ -10,12 +10,12 @@
 #### 安装教程
 
 1.  git clone https://gitee.com/dongfangshuo/efwith-dapper.git 下载源码。
-2.  找到DataBak文件夹里的bak备份文件，还原到sqlserver2014；或者用sql脚本文件执行。
+2.  找到DataBak文件夹里用sql脚本文件执行。
 3.  安装最新的Visual Studio 2022，然后打开sln，运行EFWithDapper项目。
 
 #### Demo的技术说明
 
-1.  数据库：SqlServer 2014
+1.  数据库：SqlServer 2008 R2/2012/2014
 2.  开发语言：C#
 3.  开发环境：Visual Studio 2022
 #### 各个项目简要说明 ：
